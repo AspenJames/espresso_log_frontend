@@ -5,7 +5,7 @@ const NavBar = (props) => {
   return (
     <div className='navbar'>
       <NavLink to='/' exact>Home</NavLink><span> | </span>
-      { props.user === null 
+      { props.user.id === null 
         ? (
           <React.Fragment>
             <NavLink to='/login' exact>Login</NavLink><span> | </span>

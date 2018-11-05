@@ -7,10 +7,9 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-// reducer and middleware to go here 
+import { rootReducer } from './reducers';
 
-let store; //= createStore(rootReducer, compose(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(localStorageLoad, thunk, localStorageDump))); - to be implemented after creating reducers and middlewares
-
+let store = createStore(rootReducer, compose(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk))); 
 
 ReactDOM.render((
   <Provider store={store}>
