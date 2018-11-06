@@ -4,8 +4,11 @@ import '../App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Home from '../components/Home';
+// import AuthenticatedRoute from '../components/AuthenticatedRoute';
 import NavBar from '../components/NavBar';
+import Home from '../components/Home';
+import Signup from './Signup';
+import Login from './Login';
 
 class App extends Component {
   render() {
@@ -17,8 +20,10 @@ class App extends Component {
 
         <Router>
           <React.Fragment>
-            <NavBar user={this.props.user} />
+            <NavBar user={this.props.user} /><br />
             <Route exact path='/' component={Home} />
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/login' component={Login} />
           </React.Fragment>
         </Router>
 
