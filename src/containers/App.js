@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // import AuthenticatedRoute from '../components/AuthenticatedRoute';
+import UnAuthRoute from '../components/UnAuthRoute';
 import NavBar from '../components/NavBar';
 import Home from '../components/Home';
 import Signup from './Signup';
@@ -22,8 +23,8 @@ class App extends Component {
           <React.Fragment>
             <NavBar user={this.props.user} /><br />
             <Route exact path='/' component={Home} />
-            <Route exact path='/signup' component={Signup} />
-            <Route exact path='/login' component={Login} />
+            <UnAuthRoute exact path='/signup' component={Signup} />
+            <UnAuthRoute exact path='/login' component={Login} />
           </React.Fragment>
         </Router>
 
