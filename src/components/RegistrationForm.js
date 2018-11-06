@@ -80,7 +80,7 @@ class RegistrationForm extends Component {
       return;
     }
 
-    console.log(this.state);
+    this.props.handleSubmit(this.state);
   }
 
   validatePassword = password => {

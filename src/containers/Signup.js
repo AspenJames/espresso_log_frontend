@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import RegistrationForm from '../components/RegistrationForm';
+import { registerUser } from '../actions/userActions';
 
 class Signup extends Component {
   state = {
@@ -15,7 +17,8 @@ class Signup extends Component {
       
         <RegistrationForm addError={this.addError}
           clearErrors={this.clearErrors}
-          errors={this.state.errors} />
+          errors={this.state.errors}
+          handleSubmit={this.handleRegistrationSubmit} />
       </div>
     );
   }
@@ -33,6 +36,17 @@ class Signup extends Component {
       errors: []
     });
   }
+
+  handleRegistrationSubmit = data => {
+    // Send data to redux store
+    this.props.registerUser(data);
+  }
 }
 
-export default Signup;
+const mapDispatchToProps = dispatch => {
+  return {
+    registerUser: data => dispatch(registerUser(data))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Signup);
