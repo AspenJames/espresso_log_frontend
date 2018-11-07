@@ -1,5 +1,5 @@
 const defaultHeaders = {
-  "Accept": "applicaton/json",
+  "Accept": "application/json",
   "Content-Type": "application/json"
 };
 
