@@ -5,7 +5,7 @@ class RegistrationForm extends Component {
     name: '',
     email: '',
     password: '',
-    passwordConfirmation: ''
+    password_confirmation: ''
   }
 
   componentWillUnmount() {
@@ -39,9 +39,9 @@ class RegistrationForm extends Component {
               onChange={this.handleChange} />
             <p className='light small'>At least 8 characters, includes a number, uppercase character, and a symbol.</p>
 
-            <input type='password' id='passwordConfirmation'
+            <input type='password' id='password_confirmation'
               placeholder='Password'
-              value={this.state.passwordConfirmation}
+              value={this.state.password_confirmation}
               onChange={this.handleChange} />
             <p className='light small'>Confirm your password here.</p>
 
@@ -89,7 +89,7 @@ class RegistrationForm extends Component {
   }
 
   confirmPassword = () => {
-    return this.state.password === this.state.passwordConfirmation;
+    return this.state.password === this.state.password_confirmation;
   }
 }
 
