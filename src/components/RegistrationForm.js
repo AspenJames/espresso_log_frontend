@@ -79,8 +79,8 @@ class RegistrationForm extends Component {
       this.props.addError("Passwords do not match");
       return;
     }
-
-    this.props.handleSubmit(this.state);
+    const data = { user: this.state };
+    this.props.handleSubmit(data);
   }
 
   validatePassword = password => {
