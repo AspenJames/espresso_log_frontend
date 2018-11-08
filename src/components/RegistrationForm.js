@@ -68,6 +68,7 @@ class RegistrationForm extends Component {
 
     if (this.state.email.length === 0 ) {
       this.props.addError("Email is required");
+      return;
     }
 
     if (!this.validatePassword(this.state.password)) {
