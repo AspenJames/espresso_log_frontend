@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route } from 'react-router';
+import { ConnectedRouter as Router } from 'connected-react-router';
 import { connect } from 'react-redux';
 
 // import AuthenticatedRoute from '../components/AuthenticatedRoute';
@@ -19,7 +20,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header> <br />
 
-        <Router>
+        <Router history={this.props.history}>
           <React.Fragment>
             <NavBar user={this.props.user} /><br />
             <Route exact path='/' component={Home} />
