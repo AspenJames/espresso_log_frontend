@@ -32,8 +32,8 @@ export const loginUser = (data) => {
       .then(json => {
         // if an error is returned, we add
         // that error to the user store
-        if (json.errors) {
-          dispatch(addUserError(json.errors))
+        if (json.error) {
+          dispatch(addUserError(json.error))
         } else {
           // if a user is returned, we add
           // that user to the store and their
