@@ -6,6 +6,7 @@
   "dependencies": {
     "connected-react-router": "^5.0.1",
     "history": "^4.7.2",
+    "materialize-css": "^1.0.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-redux": "^5.1.0",
