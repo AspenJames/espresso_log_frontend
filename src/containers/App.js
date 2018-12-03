@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
 import { Route } from 'react-router';
 import { ConnectedRouter as Router } from 'connected-react-router';
@@ -16,10 +15,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header> <br />
-
         <Router history={this.props.history}>
           <React.Fragment>
             <NavBar user={this.props.user} /><br />
@@ -28,7 +23,6 @@ class App extends Component {
             <UnAuthRoute exact path='/login' component={Login} />
           </React.Fragment>
         </Router>
-
       </div>
     );
   }
