@@ -47,6 +47,10 @@ export const loginUser = (data) => {
   }
 }
 
+export const logout = () => {
+  return { type: "LOGOUT_USER" } 
+}
+
 export const retrieveUser = () => {
   return dispatch => {
     dispatch({type: "POSTING_USER"})

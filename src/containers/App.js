@@ -4,7 +4,7 @@ import { ConnectedRouter as Router } from 'connected-react-router';
 import { connect } from 'react-redux';
 
 import '../styles.css';
-import { retrieveUser } from '../actions/userActions';
+import * as actions from '../actions/userActions';
 // import AuthenticatedRoute from '../components/AuthenticatedRoute';
 import NavBar from '../components/NavBar';
 import Routes from '../Routes';
@@ -20,13 +20,20 @@ class App extends Component {
       <div className="App">
         <Router history={this.props.history}>
           <React.Fragment>
-            <NavBar user={this.props.user} /><br />
+            <NavBar user={this.props.user} 
+              logoutUser={this.logoutUser} /><br />
             <Routes />
           </React.Fragment>
         </Router>
       </div>
     );
   }
+
+  logoutUser = () => {
+    localStorage.removeItem("phoenixAuthToken");
+    this.props.logout();
+  }
+  
 }
 
 const mapStateToProps = state => {
@@ -35,4 +42,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { retrieveUser })(App);
+export default connect(mapStateToProps, { ...actions })(App);

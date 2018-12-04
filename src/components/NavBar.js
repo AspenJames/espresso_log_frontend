@@ -11,6 +11,11 @@ const NavBar = (props) => {
     : null
   }
 
+  const handleLogout = (event) => {
+    event.preventDefault();
+    props.logoutUser();
+  }
+
   return (
     <nav>
       <div className='nav-wrapper deep-purple darken-3'>
@@ -27,7 +32,7 @@ const NavBar = (props) => {
             <ul className="right">
               <li className={active('/')}><NavLink to='/' exact>Home</NavLink></li>
               <li className={active('/cafes')}><NavLink to='/cafes' exact>Cafes</NavLink></li>
-              <li><NavLink to='/logout' exact>Log Out</NavLink></li>
+              <li><a href="#!" onClick={handleLogout}>Log Out</a></li>
             </ul>
           )}
       </div>
