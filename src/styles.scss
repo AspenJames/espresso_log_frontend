@@ -1,7 +1,15 @@
 @import '../public/css/sass/materialize.scss';
 
 .light {
-  @extend .teal-text, .text-darken-4;
+  @extend .blue-grey-text, .text-darken-3;
+}
+
+.dark {
+  @extend .grey-text, .text-darken-4;
+}
+
+.larger {
+  font-size: 1.2em;
 }
 
 .small {

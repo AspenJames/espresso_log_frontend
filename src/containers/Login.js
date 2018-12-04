@@ -17,10 +17,10 @@ class Login extends Component {
     return (
       <div className='container'>
         <div className='row'>
-          <div className='col s6 push-s3'>
-            <div className='card teal lighten-3 z-depth-3'>
-              <h3 className='deep-purple-text text-darken-4'>Log in to Espresso.Log</h3>
-              <p className='light'>Store and track your espresso recipes more efficiently</p>
+          <div className='col s8 push-s2'>
+            <div className='card blue-grey lighten-3 z-depth-3'>
+              <h3 className='dark'>Log in to Espresso.Log</h3>
+              <p className='light larger'>Store and track your espresso recipes more efficiently</p>
             </div>
           </div>
         </div>
