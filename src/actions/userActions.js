@@ -47,6 +47,21 @@ export const loginUser = (data) => {
   }
 }
 
+export const retrieveUser = () => {
+  return dispatch => {
+    dispatch({type: "POSTING_USER"})
+    return httpPost('/api/v1/session_retrieve')
+      .then(json => {
+        if (json.data) {
+          dispatch(addUser(json.data.user));
+        } else {
+          dispatch(addUserError(json.error));
+          localStorage.removeItem('phoenixAuthToken');
+        }
+      });
+  }
+}
+
 export const resetUserCreated = () => {
   return { type: "RESET_USER_CREATED" }
 }

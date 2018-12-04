@@ -5,6 +5,7 @@ import { ConnectedRouter as Router } from 'connected-react-router';
 import { connect } from 'react-redux';
 
 import '../styles.css';
+import { retrieveUser } from '../actions/userActions';
 // import AuthenticatedRoute from '../components/AuthenticatedRoute';
 import UnAuthRoute from '../components/UnAuthRoute';
 import NavBar from '../components/NavBar';
@@ -13,6 +14,11 @@ import Signup from './Signup';
 import Login from './Login';
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.retrieveUser();
+  }
+
   render() {
     return (
       <div className="App">
@@ -35,4 +41,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { retrieveUser })(App);
