@@ -1,0 +1,18 @@
+@import '../public/css/sass/materialize.scss';
+
+.light {
+  @extend .amber-text, .text-lighten-4;
+}
+
+.small {
+  font-size: .8em;
+}
+
+.formElement {
+  display: inline-block;
+  column-width: 250px;
+}
+
+.error {
+  @extend .pink-text, .text-lighten-1
+}
