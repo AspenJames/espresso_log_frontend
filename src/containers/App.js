@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Route } from 'react-router';
 import { ConnectedRouter as Router } from 'connected-react-router';
 import { connect } from 'react-redux';
 
 import '../styles.css';
 import { retrieveUser } from '../actions/userActions';
 // import AuthenticatedRoute from '../components/AuthenticatedRoute';
-import UnAuthRoute from '../components/UnAuthRoute';
 import NavBar from '../components/NavBar';
-import Home from '../components/Home';
-import Signup from './Signup';
-import Login from './Login';
+import Routes from '../Routes';
 
 class App extends Component {
 
@@ -25,9 +21,7 @@ class App extends Component {
         <Router history={this.props.history}>
           <React.Fragment>
             <NavBar user={this.props.user} /><br />
-            <Route exact path='/' component={Home} />
-            <UnAuthRoute exact path='/signup' component={Signup} />
-            <UnAuthRoute exact path='/login' component={Login} />
+            <Routes />
           </React.Fragment>
         </Router>
       </div>
