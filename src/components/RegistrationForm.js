@@ -15,8 +15,6 @@ class RegistrationForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <h3>Create your personal account</h3>
-
         {this.props.errors && <p className='error'>{this.props.errors.join(', ')}</p>}
 
         <form onSubmit={this.handleSubmit}>

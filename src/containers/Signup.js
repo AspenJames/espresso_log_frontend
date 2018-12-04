@@ -11,14 +11,27 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Join Espresso.Log</h1>
-        <p className='light'>Store and track your espresso recipes more efficiently</p>
+      <div className='container'>
+        <div className='row'>
+          <div className='col s6 push-s3'>
+            <div className='card brown lighten-3'>
+              <h3>Create your personal account</h3>
+              <p className='light'>Store and track your espresso recipes more efficiently</p>
+            </div>
+          </div>
+        </div>
       
-        <RegistrationForm addError={this.addError}
-          clearErrors={this.clearErrors}
-          errors={this.state.errors}
-          handleSubmit={this.handleRegistrationSubmit} />
+      <div className='row'>
+        <div className='col s6'>
+          <RegistrationForm addError={this.addError}
+            clearErrors={this.clearErrors}
+            errors={this.state.errors}
+            handleSubmit={this.handleRegistrationSubmit} />
+        </div>
+        <div className='col s6 orange'>
+          Section reserved for OAuth
+        </div>
+      </div>
       </div>
     );
   }
