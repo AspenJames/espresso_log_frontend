@@ -22,7 +22,7 @@ class RegistrationForm extends Component {
           <div className="row">
             <div className="formElement-split">
               <input type="text" id="name" value={this.state.name} onChange={this.handleChange} />
-              <label for="name">Name</label>
+              <label htmlFor="name">Name</label>
               <span className="helper-text">
                 This will act as your public username. Feel free to use your
                 full name or a handle.
@@ -33,7 +33,7 @@ class RegistrationForm extends Component {
           <div className="row">
             <div className="formElement-split">
               <input type="email" id="email" value={this.state.email} onChange={this.handleChange} />
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
               <span className="helper-text">
                 You'll use this to log in once your account is created.
               </span>
@@ -43,7 +43,7 @@ class RegistrationForm extends Component {
           <div className="row">
             <div className="formElement-split">
               <input type="password" id="password" value={this.state.password} onChange={this.handleChange} />
-              <label for="password">Password</label>
+              <label htmlFor="password">Password</label>
               <span className="helper-text">
                 At least 8 characters, includes a number, uppercase
                 character, and a symbol.
@@ -54,7 +54,7 @@ class RegistrationForm extends Component {
           <div className="row">
             <div className="formElement-split">
               <input type="password" id="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange} />
-              <label for="password-confirmation">
+              <label htmlFor="password-confirmation">
                 Password Confirmation
               </label>
               <span className="helper-text">
@@ -64,8 +64,8 @@ class RegistrationForm extends Component {
           </div>
 
           <div className="row">
-            <button className="btn waves-effect waves-light" type="submit">
-              Sign Up <i class="material-icons right">send</i>
+            <button className="btn btn-large waves-effect waves-light" type="submit">
+              Sign Up <i className="material-icons right">send</i>
             </button>
           </div>
         </form>

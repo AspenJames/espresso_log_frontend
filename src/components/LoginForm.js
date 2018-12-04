@@ -20,20 +20,20 @@ class LoginForm extends Component {
           <div className="row">
             <div className="formElement">
               <input type="email" id="email" value={this.state.email} onChange={this.handleChange} />
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
             </div>
           </div>
 
           <div className="row">
             <div className="formElement">
               <input type="password" id="password" value={this.state.password} onChange={this.handleChange} />
-              <label for='password'>Password</label>
+              <label htmlFor='password'>Password</label>
             </div>
           </div>
 
           <div className="row">
-            <button className='btn waves-effect waves-light' type='submit'>
-              Log In <i class="material-icons right">send</i>
+            <button className='btn btn-large waves-effect waves-light' type='submit'>
+              Log In <i className="material-icons right">send</i>
             </button>
           </div>
         </form>
