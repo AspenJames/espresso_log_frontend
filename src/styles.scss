@@ -1,7 +1,7 @@
 @import '../public/css/sass/materialize.scss';
 
 .light {
-  @extend .amber-text, .text-lighten-4;
+  @extend .teal-text, .text-darken-4;
 }
 
 .small {
@@ -9,10 +9,13 @@
 }
 
 .formElement {
-  display: inline-block;
-  column-width: 250px;
+  @extend .input-field, .col, .s4, .push-s4;
+}
+
+.formElement-split {
+  @extend .input-field, .col, .s8, .push-s2;
 }
 
 .error {
-  @extend .pink-text, .text-lighten-1
+  @extend .pink-text, .text-lighten-1;
 }

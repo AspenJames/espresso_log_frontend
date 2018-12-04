@@ -15,9 +15,15 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Log in to Espresso.Log</h1>
-        <p className='light'>Store and track your espresso recipes more efficiently</p>
+      <div className='container'>
+        <div className='row'>
+          <div className='col s6 push-s3'>
+            <div className='card teal lighten-3 z-depth-3'>
+              <h3 className='deep-purple-text text-darken-4'>Log in to Espresso.Log</h3>
+              <p className='light'>Store and track your espresso recipes more efficiently</p>
+            </div>
+          </div>
+        </div>
 
         <LoginForm addError={this.addError}
           clearErrors={this.clearErrors}

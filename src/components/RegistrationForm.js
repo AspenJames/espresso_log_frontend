@@ -13,41 +13,63 @@ class RegistrationForm extends Component {
   }
 
   render() {
-    return (
-      <React.Fragment>
-        {this.props.errors && <p className='error'>{this.props.errors.join(', ')}</p>}
+    return <div className="row">
+        {this.props.errors && <p className="error">
+            {this.props.errors.join(", ")}
+          </p>}
 
-        <form onSubmit={this.handleSubmit}>
-          <div className='formElement'>
-            <input type='text' id='name'
-              placeholder='Name'
-              value={this.state.name}
-              onChange={this.handleChange} />
-            <p className='light small'>This will act as your public username. Feel free to use your full name or a handle.</p>
+        <form className="col s12" onSubmit={this.handleSubmit}>
+          <div className="row">
+            <div className="formElement-split">
+              <input type="text" id="name" value={this.state.name} onChange={this.handleChange} />
+              <label for="name">Name</label>
+              <span className="helper-text">
+                This will act as your public username. Feel free to use your
+                full name or a handle.
+              </span>
+            </div>
+          </div>
 
-            <input type='email' id='email'
-              placeholder='Email'
-              value={this.state.email}
-              onChange={this.handleChange} />
-            <p className='light small'>You'll use this to log in once your account is created.</p>
+          <div className="row">
+            <div className="formElement-split">
+              <input type="email" id="email" value={this.state.email} onChange={this.handleChange} />
+              <label for="email">Email</label>
+              <span className="helper-text">
+                You'll use this to log in once your account is created.
+              </span>
+            </div>
+          </div>
 
-            <input type='password' id='password'
-              placeholder='Password'
-              value={this.state.password}
-              onChange={this.handleChange} />
-            <p className='light small'>At least 8 characters, includes a number, uppercase character, and a symbol.</p>
+          <div className="row">
+            <div className="formElement-split">
+              <input type="password" id="password" value={this.state.password} onChange={this.handleChange} />
+              <label for="password">Password</label>
+              <span className="helper-text">
+                At least 8 characters, includes a number, uppercase
+                character, and a symbol.
+              </span>
+            </div>
+          </div>
 
-            <input type='password' id='password_confirmation'
-              placeholder='Password'
-              value={this.state.password_confirmation}
-              onChange={this.handleChange} />
-            <p className='light small'>Confirm your password here.</p>
+          <div className="row">
+            <div className="formElement-split">
+              <input type="password" id="password_confirmation" value={this.state.password_confirmation} onChange={this.handleChange} />
+              <label for="password-confirmation">
+                Password Confirmation
+              </label>
+              <span className="helper-text">
+                Confirm your password here.
+              </span>
+            </div>
+          </div>
 
-            <input type='submit' value='Sign up' />
-          </div><br />
+          <div className="row">
+            <button className="btn waves-effect waves-light" type="submit">
+              Sign Up <i class="material-icons right">send</i>
+            </button>
+          </div>
         </form>
-      </React.Fragment>
-    )
+      </div>;
   }
 
   handleChange = event => {

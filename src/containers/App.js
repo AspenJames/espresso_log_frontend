@@ -4,6 +4,7 @@ import { Route } from 'react-router';
 import { ConnectedRouter as Router } from 'connected-react-router';
 import { connect } from 'react-redux';
 
+import '../styles.css';
 // import AuthenticatedRoute from '../components/AuthenticatedRoute';
 import UnAuthRoute from '../components/UnAuthRoute';
 import NavBar from '../components/NavBar';

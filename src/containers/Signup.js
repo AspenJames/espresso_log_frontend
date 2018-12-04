@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import RegistrationForm from '../components/RegistrationForm';
 import { registerUser } from '../actions/userActions';
+import { XMLNS_1_0 } from 'xmlchars';
 
 class Signup extends Component {
   state = {
@@ -14,8 +15,8 @@ class Signup extends Component {
       <div className='container'>
         <div className='row'>
           <div className='col s6 push-s3'>
-            <div className='card brown lighten-3'>
-              <h3>Create your personal account</h3>
+            <div className='card teal lighten-3 z-depth-3'>
+              <h3 className='deep-purple-text text-darken-4'>Join Espresso.Log</h3>
               <p className='light'>Store and track your espresso recipes more efficiently</p>
             </div>
           </div>
@@ -29,7 +30,7 @@ class Signup extends Component {
             handleSubmit={this.handleRegistrationSubmit} />
         </div>
         <div className='col s6 orange'>
-          Section reserved for OAuth
+            <br /><br /><br /><br />OAUTH GOES HERE<br /><br /><br /><br /><br />
         </div>
       </div>
       </div>

@@ -11,31 +11,33 @@ class LoginForm extends Component {
   }
 
   render() {
-    return (
-      <React.Fragment>
-        {this.props.errors && <p className='error'>{this.props.errors.join(', ')}</p>}
+    return <div className='row'>
+        {this.props.errors && <p className="error">
+            {this.props.errors.join(", ")}
+          </p>}
 
-        <form onSubmit={this.handleSubmit}>
-          <div className='formElement'>
-            <input type='email' id='email'
-              placeholder='Email'
-              value={this.state.email}
-              onChange={this.handleChange} />
-          </div><br />
+        <form className="col s12" onSubmit={this.handleSubmit}>
+          <div className="row">
+            <div className="formElement">
+              <input type="email" id="email" value={this.state.email} onChange={this.handleChange} />
+              <label for="email">Email</label>
+            </div>
+          </div>
 
-          <div className='formElement'>
-            <input type='password' id='password'
-              placeholder='Password'
-              value={this.state.password}
-              onChange={this.handleChange} />
-          </div><br />
-            
-          <div className='formElement'>
-            <input type='submit' value='Log In' />
-          </div><br />
+          <div className="row">
+            <div className="formElement">
+              <input type="password" id="password" value={this.state.password} onChange={this.handleChange} />
+              <label for='password'>Password</label>
+            </div>
+          </div>
+
+          <div className="row">
+            <button className='btn waves-effect waves-light' type='submit'>
+              Log In <i class="material-icons right">send</i>
+            </button>
+          </div>
         </form>
-      </React.Fragment>
-    )
+      </div>;
   }
 
   handleChange = event => {
