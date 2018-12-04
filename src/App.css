@@ -30,22 +30,3 @@
     transform: rotate(360deg);
   }
 }
-
-/* Custom styles */
-
-.light {
-  color: #888;
-}
-
-.small {
-  font-size: .8em;
-}
-
-.formElement {
-  display: inline-block;
-  column-width: 250px;
-}
-
-.error {
-  color: #C51162;
-}
