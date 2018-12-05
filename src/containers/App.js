@@ -12,7 +12,9 @@ import Routes from '../Routes';
 class App extends Component {
 
   componentDidMount() {
-    this.props.retrieveUser();
+    if (!this.props.user.id && localStorage.getItem('phoenixAuthToken')) {
+      this.props.retrieveUser();
+    }
   }
 
   render() {
