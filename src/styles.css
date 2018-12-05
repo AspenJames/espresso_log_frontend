@@ -6557,3 +6557,9 @@ input[type=range]::-ms-thumb {
 
 .small {
   font-size: .8em; }
+
+.block-400 {
+  height: 400px; }
+
+.fill {
+  height: 100%; }

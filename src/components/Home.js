@@ -12,29 +12,29 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="row">
-        <div className="col s6">
-          <div className="card light-blue accent-1 z-depth-2">
+      <div className="row block-400">
+        <div className="col s6 fill">
+          <div className="card-panel transparent z-depth-2 fill">
             <h4 className="dark">Why?</h4>
+            <p className="dark flow-text">
+              Specialty coffee shops often collect data on their espresso recipes,
+              but ultimately don't analyze or use that data in any useful way.
+            </p>
           </div>
 
-          <p className="dark flow-text">
-            Specialty coffee shops often collect data on their espresso recipes,
-            but ultimately don't analyze or use that data in any useful way.
-          </p>
         </div>
 
-        <div className="col s6">
-          <div className="card light-blue accent-1 z-depth-2">
+        <div className="col s6 fill">
+          <div className="card-panel transparent z-depth-2 fill">
             <h4 className="grey-text text-darken-4">How?</h4>
+            <p className="dark flow-text">
+              This application makes it easier to use the data you collect by
+              presenting it in a graphical way. Seeing your espresso recipes{" "}
+              <strong>in a graph</strong> makes it easier to immediately identify
+              when there are inconsistencies.
+            </p>
           </div>
 
-          <p className="dark flow-text">
-            This application makes it easier to use the data you collect by
-            presenting it in a graphical way. Seeing your espresso recipes{" "}
-            <strong>in a graph</strong> makes it easier to immediately identify
-            when there are inconsistencies.
-          </p>
         </div>
       </div>
 
