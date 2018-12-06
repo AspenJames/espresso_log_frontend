@@ -35,3 +35,8 @@
 .error {
   @extend .pink-text, .text-lighten-1;
 }
+
+.btn-inline {
+  @extend .btn-small;
+  margin-top: 20px;
+}

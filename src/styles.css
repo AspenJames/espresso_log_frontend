@@ -2026,10 +2026,10 @@ a {
   box-shadow: none !important; }
 
 /* 2dp elevation modified*/
-.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-inline, .btn-floating, .dropdown-content, .collapsible, .sidenav {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
 
-.z-depth-1-half, .btn:hover, .btn-large:hover, .btn-small:hover, .btn-floating:hover {
+.z-depth-1-half, .btn:hover, .btn-large:hover, .btn-small:hover, .btn-inline:hover, .btn-floating:hover {
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2); }
 
 /* 6dp elevation modified*/
@@ -3223,11 +3223,11 @@ nav {
       display: block;
       padding: 0 15px;
       cursor: pointer; }
-      nav ul a.btn, nav ul a.btn-large, nav ul a.btn-small, nav ul a.btn-large, nav ul a.btn-flat, nav ul a.btn-floating {
+      nav ul a.btn, nav ul a.btn-large, nav ul a.btn-small, nav ul a.btn-inline, nav ul a.btn-large, nav ul a.btn-flat, nav ul a.btn-floating {
         margin-top: -2px;
         margin-left: 15px;
         margin-right: 15px; }
-        nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.btn-small > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.btn-flat > .material-icons, nav ul a.btn-floating > .material-icons {
+        nav ul a.btn > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.btn-small > .material-icons, nav ul a.btn-inline > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.btn-flat > .material-icons, nav ul a.btn-floating > .material-icons {
           height: inherit;
           line-height: inherit; }
       nav ul a:hover {
@@ -3539,12 +3539,12 @@ small {
     padding: 16px 24px; }
     .card .card-action:last-child {
       border-radius: 0 0 2px 2px; }
-    .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-inline):not(.btn-large):not(.btn-floating) {
       color: #ffab40;
       margin-right: 24px;
       transition: color .3s ease;
       text-transform: uppercase; }
-      .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+      .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-inline):not(.btn-large):not(.btn-floating):hover {
         color: #ffd8a6; }
   .card .card-reveal {
     padding: 24px;
@@ -3709,7 +3709,7 @@ small {
   transform-origin: 50% 0%;
   visibility: hidden; }
 
-.btn, .btn-large, .btn-small,
+.btn, .btn-large, .btn-small, .btn-inline,
 .btn-flat {
   border: none;
   border-radius: 2px;
@@ -3721,72 +3721,84 @@ small {
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent; }
 
-.btn.disabled, .disabled.btn-large, .disabled.btn-small,
+.btn.disabled, .disabled.btn-large, .disabled.btn-small, .disabled.btn-inline,
 .btn-floating.disabled,
 .btn-large.disabled,
 .btn-small.disabled,
+.disabled.btn-inline,
 .btn-flat.disabled,
 .btn:disabled,
 .btn-large:disabled,
 .btn-small:disabled,
+.btn-inline:disabled,
 .btn-floating:disabled,
 .btn-large:disabled,
 .btn-small:disabled,
+.btn-inline:disabled,
 .btn-flat:disabled,
 .btn[disabled],
 .btn-large[disabled],
 .btn-small[disabled],
+.btn-inline[disabled],
 .btn-floating[disabled],
 .btn-large[disabled],
 .btn-small[disabled],
+.btn-inline[disabled],
 .btn-flat[disabled] {
   pointer-events: none;
   background-color: #DFDFDF !important;
   box-shadow: none;
   color: #9F9F9F !important;
   cursor: default; }
-  .btn.disabled:hover, .disabled.btn-large:hover, .disabled.btn-small:hover,
+  .btn.disabled:hover, .disabled.btn-large:hover, .disabled.btn-small:hover, .disabled.btn-inline:hover,
   .btn-floating.disabled:hover,
   .btn-large.disabled:hover,
   .btn-small.disabled:hover,
+  .disabled.btn-inline:hover,
   .btn-flat.disabled:hover,
   .btn:disabled:hover,
   .btn-large:disabled:hover,
   .btn-small:disabled:hover,
+  .btn-inline:disabled:hover,
   .btn-floating:disabled:hover,
   .btn-large:disabled:hover,
   .btn-small:disabled:hover,
+  .btn-inline:disabled:hover,
   .btn-flat:disabled:hover,
   .btn[disabled]:hover,
   .btn-large[disabled]:hover,
   .btn-small[disabled]:hover,
+  .btn-inline[disabled]:hover,
   .btn-floating[disabled]:hover,
   .btn-large[disabled]:hover,
   .btn-small[disabled]:hover,
+  .btn-inline[disabled]:hover,
   .btn-flat[disabled]:hover {
     background-color: #DFDFDF !important;
     color: #9F9F9F !important; }
 
-.btn, .btn-large, .btn-small,
+.btn, .btn-large, .btn-small, .btn-inline,
 .btn-floating,
 .btn-large,
 .btn-small,
+.btn-inline,
 .btn-flat {
   font-size: 14px;
   outline: 0; }
-  .btn i, .btn-large i, .btn-small i,
+  .btn i, .btn-large i, .btn-small i, .btn-inline i,
   .btn-floating i,
   .btn-large i,
   .btn-small i,
+  .btn-inline i,
   .btn-flat i {
     font-size: 1.3rem;
     line-height: inherit; }
 
-.btn:focus, .btn-large:focus, .btn-small:focus,
+.btn:focus, .btn-large:focus, .btn-small:focus, .btn-inline:focus,
 .btn-floating:focus {
   background-color: #1d7d74; }
 
-.btn, .btn-large, .btn-small {
+.btn, .btn-large, .btn-small, .btn-inline {
   text-decoration: none;
   color: #fff;
   background-color: #26a69a;
@@ -3794,7 +3806,7 @@ small {
   letter-spacing: .5px;
   transition: background-color .2s ease-out;
   cursor: pointer; }
-  .btn:hover, .btn-large:hover, .btn-small:hover {
+  .btn:hover, .btn-large:hover, .btn-small:hover, .btn-inline:hover {
     background-color: #2bbbad; }
 
 .btn-floating {
@@ -3824,12 +3836,12 @@ small {
       bottom: -28px; }
     .btn-floating.btn-large i {
       line-height: 56px; }
-  .btn-floating.btn-small {
+  .btn-floating.btn-small, .btn-floating.btn-inline {
     width: 32.4px;
     height: 32.4px; }
-    .btn-floating.btn-small.halfway-fab {
+    .btn-floating.btn-small.halfway-fab, .btn-floating.halfway-fab.btn-inline {
       bottom: -16.2px; }
-    .btn-floating.btn-small i {
+    .btn-floating.btn-small i, .btn-floating.btn-inline i {
       line-height: 32.4px; }
   .btn-floating.halfway-fab {
     position: absolute;
@@ -3965,11 +3977,15 @@ button.btn-floating {
   .btn-large i {
     font-size: 1.6rem; }
 
-.btn-small {
+
+.btn-small,
+.btn-inline {
   height: 32.4px;
   line-height: 32.4px;
   font-size: 13px; }
-  .btn-small i {
+  
+  .btn-small i,
+  .btn-inline i {
     font-size: 1.2rem; }
 
 .btn-block {
@@ -4150,7 +4166,7 @@ body.keyboard-focused .dropdown-content li:focus {
     height: 56px;
     width: 100%;
     text-align: right; }
-    .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-flat {
+    .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-inline, .modal .modal-footer .btn-flat {
       margin: 6px 0; }
 
 .modal-overlay {
@@ -5343,7 +5359,7 @@ body.keyboard-focused .select-dropdown.dropdown-content li:focus {
     padding-left: 10px; }
   .file-field input.file-path {
     width: 100%; }
-  .file-field .btn, .file-field .btn-large, .file-field .btn-small {
+  .file-field .btn, .file-field .btn-large, .file-field .btn-small, .file-field .btn-inline {
     float: left;
     height: 3rem;
     line-height: 3rem; }
@@ -5555,13 +5571,13 @@ input[type=range]::-ms-thumb {
     padding: 0 32px; }
     .sidenav li > a:hover {
       background-color: rgba(0, 0, 0, 0.05); }
-    .sidenav li > a.btn, .sidenav li > a.btn-large, .sidenav li > a.btn-small, .sidenav li > a.btn-large, .sidenav li > a.btn-flat, .sidenav li > a.btn-floating {
+    .sidenav li > a.btn, .sidenav li > a.btn-large, .sidenav li > a.btn-small, .sidenav li > a.btn-inline, .sidenav li > a.btn-large, .sidenav li > a.btn-flat, .sidenav li > a.btn-floating {
       margin: 10px 15px; }
-    .sidenav li > a.btn, .sidenav li > a.btn-large, .sidenav li > a.btn-small, .sidenav li > a.btn-large, .sidenav li > a.btn-floating {
+    .sidenav li > a.btn, .sidenav li > a.btn-large, .sidenav li > a.btn-small, .sidenav li > a.btn-inline, .sidenav li > a.btn-large, .sidenav li > a.btn-floating {
       color: #fff; }
     .sidenav li > a.btn-flat {
       color: #343434; }
-    .sidenav li > a.btn:hover, .sidenav li > a.btn-large:hover, .sidenav li > a.btn-small:hover, .sidenav li > a.btn-large:hover {
+    .sidenav li > a.btn:hover, .sidenav li > a.btn-large:hover, .sidenav li > a.btn-small:hover, .sidenav li > a.btn-inline:hover, .sidenav li > a.btn-large:hover {
       background-color: #2bbbad; }
     .sidenav li > a.btn-floating:hover {
       background-color: #26a69a; }
@@ -6236,7 +6252,7 @@ input[type=range]::-ms-thumb {
   transform: translate(-50%, -50%);
   z-index: 10002;
   position: absolute !important; }
-  .tap-target-origin:not(.btn):not(.btn-large):not(.btn-small), .tap-target-origin:not(.btn):not(.btn-large):not(.btn-small):hover {
+  .tap-target-origin:not(.btn):not(.btn-large):not(.btn-small):not(.btn-inline), .tap-target-origin:not(.btn):not(.btn-large):not(.btn-small):not(.btn-inline):hover {
     background: none; }
 
 @media only screen and (max-width: 600px) {
@@ -6563,3 +6579,6 @@ input[type=range]::-ms-thumb {
 
 .fill {
   height: 100%; }
+
+.btn-inline {
+  margin-top: 20px; }
