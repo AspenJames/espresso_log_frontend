@@ -3,9 +3,14 @@ import { connect } from 'react-redux';
 
 import CafeForm from '../components/CafeForm';
 import CafeList from '../components/CafeList';
-import { addCafe } from '../actions/cafeActions';
+import * as actions from '../actions/cafeActions';
 
 class Cafes extends Component {
+
+  componentWillUnmount() {
+    this.props.resetCafeErrors();
+  }
+
   render() {
     return (
       <div className='container'>
@@ -23,9 +28,9 @@ class Cafes extends Component {
   }
 
   cafeFormSubmit = (data) => {
-    this.props.addCafe(data)
+    this.props.postCafe(data)
   }
 
 }
 
-export default connect(null, { addCafe })(Cafes);
+export default connect(null, { ...actions })(Cafes);
