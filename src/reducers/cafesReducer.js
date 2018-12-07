@@ -18,7 +18,7 @@ export default function cafesReducer(state = defaultState, action) {
 }
 
 const defaultState = {
-  cafes: [], posting: false, errors: []
+  cafes: [], posting: false, errors: null
 }
 
 /**

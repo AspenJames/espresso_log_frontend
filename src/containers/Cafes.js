@@ -16,7 +16,8 @@ class Cafes extends Component {
       <div className='container'>
         <div className='row'>
           <div className='col s6'>
-            <CafeForm handleSubmit={this.cafeFormSubmit} />
+            <CafeForm handleSubmit={this.cafeFormSubmit}
+              errors={this.props.cafes.errors} />
           </div>
 
           <div className='col s6'>
@@ -30,7 +31,13 @@ class Cafes extends Component {
   cafeFormSubmit = (data) => {
     this.props.postCafe(data)
   }
-
 }
 
-export default connect(null, { ...actions })(Cafes);
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    cafes: state.cafes
+  }
+}
+
+export default connect(mapStateToProps, { ...actions })(Cafes);

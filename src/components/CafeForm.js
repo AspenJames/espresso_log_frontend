@@ -13,7 +13,7 @@ class CafeForm extends Component {
           <h4 className='dark'>Add a new cafe</h4>
         </div>
         {this.props.errors && <p className='error'>
-          {this.props.errors.join(', ')}
+          {this.renderErrors()}
         </p>}
 
         <form className='col s12' onSubmit={this.handleSubmit}>
@@ -38,6 +38,14 @@ class CafeForm extends Component {
         </form>
       </div>
     );
+  }
+
+  renderErrors = () => {
+    const errors = this.props.errors;
+    const errKeys = Object.keys(errors);
+    return errKeys.map(key => (
+      `${key} ${errors[key].join(", ")}`
+    )).join(", ")
   }
 
   handleChange = (event) => {
