@@ -49,7 +49,7 @@ export const loginUser = (data) => {
 }
 
 export const logout = () => {
-  return { type: "LOGOUT_USER" } 
+  return { type: "LOGOUT" } 
 }
 
 export const retrieveUser = () => {

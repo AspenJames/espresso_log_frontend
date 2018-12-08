@@ -3,6 +3,9 @@ export default function espressosReducer(state = defaultState, action) {
     case "ADD_ESPRESSO":
       return state;
 
+    case "LOGOUT":
+      return defaultState;
+
     default: 
       return state;
   }

@@ -34,6 +34,10 @@ export const resetCafeErrors = () => {
   return {type: "RESET_CAFE_ERRORS"}
 }
 
+export const resetCafes = () => {
+  return {type: "RESET_CAFES"}
+}
+
 const postingCafes = () => ({type: "POSTING_CAFE"})
 
 const addCafe = (cafe) => {

@@ -3,7 +3,7 @@ export default function userReducer(state = defaultState, action) {
     case "ADD_USER":
       return { ...state, requestPending: false, error: null, id: action.user.id, name: action.user.name, email: action.user.email };
 
-    case "LOGOUT_USER":
+    case "LOGOUT":
       return defaultState;
 
     case "POSTING_USER": 

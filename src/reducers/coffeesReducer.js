@@ -3,6 +3,9 @@ export default function coffeesReducer(state = defaultState, action) {
     case "ADD_COFFEE": 
       return state;
 
+    case "LOGOUT":
+      return defaultState;
+
     default:
       return state;
   }

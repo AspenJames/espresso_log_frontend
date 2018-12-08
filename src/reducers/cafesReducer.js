@@ -12,6 +12,12 @@ export default function cafesReducer(state = defaultState, action) {
     case "RESET_CAFE_ERRORS":
       return {...state, errors: []}
 
+    case "RESET_CAFES":
+      return defaultState;
+
+    case "LOGOUT":
+      return defaultState
+
     default: 
       return state;
   }
