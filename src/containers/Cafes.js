@@ -8,7 +8,7 @@ import * as actions from '../actions/cafeActions';
 class Cafes extends Component {
 
   componentWillUnmount() {
-    this.props.resetCafeErrors();
+    this.props.resetCafes();
   }
 
   render() {
@@ -17,7 +17,8 @@ class Cafes extends Component {
         <div className='row'>
           <div className='col s6'>
             <CafeForm handleSubmit={this.cafeFormSubmit}
-              errors={this.props.cafes.errors} />
+              errors={this.props.cafes.errors}
+              resetErrors={this.props.resetCafeErrors} />
           </div>
 
           <div className='col s6'>

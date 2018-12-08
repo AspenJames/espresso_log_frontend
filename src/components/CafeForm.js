@@ -56,6 +56,7 @@ class CafeForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.props.resetErrors();
     const cafe = {cafe: this.state}
     this.props.handleSubmit(cafe);
     this.setState({
