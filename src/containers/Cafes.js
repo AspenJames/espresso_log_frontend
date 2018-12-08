@@ -21,7 +21,7 @@ class Cafes extends Component {
           </div>
 
           <div className='col s6'>
-            <CafeList />
+            <CafeList cafes={this.props.cafes.cafes} />
           </div>
         </div>
       </div>

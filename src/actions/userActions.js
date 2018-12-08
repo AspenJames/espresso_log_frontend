@@ -1,6 +1,7 @@
 import { push } from 'connected-react-router';
 
 import { httpPost } from "../utilities";
+import { fetchUserCafes } from './cafeActions';
 
 export const registerUser = (data) => {
   return dispatch => {
@@ -75,5 +76,8 @@ const addUserError = (error) => {
 }
 
 const addUser = (user) => {
-  return { type: "ADD_USER", user }
+  return dispatch => {
+    dispatch({type: "ADD_USER", user})
+    dispatch(fetchUserCafes(user.id))
+  }
 }

@@ -1,4 +1,4 @@
-// import { push } from 'connected-react-router';
+import { push } from 'connected-react-router';
 
 import { httpPost, httpGet } from "../utilities";
 
@@ -8,7 +8,7 @@ export const postCafe = (cafe) => {
     return httpPost('/api/v1/cafes', cafe)
       .then(json => {
         if (json.data) {
-          dispatch(addCafe(json.data));
+          dispatch(push(`/cafes/${json.data.id}`));
         } else {
           dispatch(addError(json.errors));
         }
@@ -21,7 +21,11 @@ export const fetchUserCafes = (userId) => {
     dispatch(postingCafes());
     return httpGet(`/api/v1/users/${userId}/cafes`)
       .then(json => {
-        console.log(json);
+        if (json.data) {
+          json.data.forEach(cafe => {
+            dispatch(addCafe(cafe));
+          })
+        }
       })
   }
 }
