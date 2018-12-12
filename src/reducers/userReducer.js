@@ -3,6 +3,9 @@ export default function userReducer(state = defaultState, action) {
     case "ADD_USER":
       return { ...state, requestPending: false, error: null, id: action.user.id, name: action.user.name, email: action.user.email };
 
+    case "ADD_CAFE_USER":
+      return {...state, cafeUsers: state.cafeUsers.concat(action.cafeUser)}
+
     case "LOGOUT":
       return defaultState;
 
@@ -29,7 +32,8 @@ const defaultState = {
   email: null,
   requestPending: false,
   error: null,
-  userCreated: false
+  userCreated: false,
+  cafeUsers: []
 }
 
 /**

@@ -1,6 +1,6 @@
 import { push } from 'connected-react-router';
 
-import { httpPost } from "../utilities";
+import { httpPost, httpGet } from "../utilities";
 import { fetchUserCafes, fetchCafes } from './cafeActions';
 
 export const registerUser = (data) => {
@@ -71,6 +71,23 @@ export const resetUserCreated = () => {
   return { type: "RESET_USER_CREATED" }
 }
 
+const fetchCafeUsers = (userId) => {
+  return dispatch => {
+    return httpGet(`/api/v1/users/${userId}/cafe_users`)
+      .then(resp => {
+        if (resp.data) {
+          resp.data.forEach(cafeUser => {
+            dispatch(addCafeUser(cafeUser));
+          });
+        }
+      });
+  }
+}
+
+const addCafeUser = (cafeUser) => {
+  return {type: "ADD_CAFE_USER", cafeUser}
+}
+
 const addUserError = (error) => {
   return { type: "ADD_USER_ERROR", error }
 }
@@ -83,5 +100,7 @@ const addUser = (user) => {
     dispatch(fetchUserCafes(user.id));
     // fetch all cafes
     dispatch(fetchCafes());
+    // fetch cafe_user associations
+    dispatch(fetchCafeUsers(user.id));
   }
 }
