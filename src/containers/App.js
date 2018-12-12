@@ -3,7 +3,7 @@ import '../App.css';
 import { ConnectedRouter as Router } from 'connected-react-router';
 import { connect } from 'react-redux';
 
-import '../styles.css';
+import '../assets/styles/styles.css';
 import * as actions from '../actions/userActions';
 // import AuthenticatedRoute from '../components/AuthenticatedRoute';
 import NavBar from '../components/NavBar';
