@@ -2,13 +2,15 @@ import React from 'react';
 import { Route } from 'react-router';
 
 import UnAuthRoute from './components/UnAuthRoute';
-import AuthenticatedRoute from './components/AuthenticatedRoute'
+import AuthenticatedRoute from './components/AuthenticatedRoute';
+import CafeRoute from './components/CafeRoute';
 import Home from './components/Home';
 import Signup from './containers/Signup';
 import Login from './containers/Login';
 import Cafes from './containers/Cafes';
+import Coffee from './containers/Coffee';
 
-const Routes = () => {
+const Routes = (props) => {
   return (
     <React.Fragment>
       <Route exact path='/' component={Home} />
@@ -17,8 +19,11 @@ const Routes = () => {
       <UnAuthRoute exact path='/login' component={Login} />
       
       <AuthenticatedRoute exact path='/cafes' component={Cafes} />
+
+      <CafeRoute exact path='/cafes/:id' component={Coffee}
+        user={props.user} cafes={props.cafes} />
     </React.Fragment>
-  )
+  );
 }
 
 export default Routes;

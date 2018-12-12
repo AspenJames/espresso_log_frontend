@@ -24,7 +24,8 @@ class App extends Component {
           <React.Fragment>
             <NavBar user={this.props.user} 
               logoutUser={this.logoutUser} /><br />
-            <Routes />
+            <Routes user={this.props.user}
+              cafes={this.props.cafes} />
           </React.Fragment>
         </Router>
       </div>
@@ -40,7 +41,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.user,
+    cafes: state.cafes
   }
 }
 
