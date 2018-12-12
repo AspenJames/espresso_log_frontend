@@ -4,7 +4,12 @@ export default function cafesReducer(state = defaultState, action) {
       return {...state, cafes: state.cafes.concat(action.cafe), posting: false}
     
     case "ADD_CAFE_ERROR":
-    return {...state, errors: action.error, posting: false}
+      return {...state, errors: action.error, posting: false}
+
+    case "ADD_TO_USER_CAFES":
+      const cafe = state.cafes.find(cafe => cafe.id === action.cafeId);
+      return {...state, userCafes: state.userCafes.concat(cafe),
+        cafes: state.cafes.filter(cafe => cafe.id !== action.cafeId)};
     
     case "ADD_USER_CAFE":
       return {...state, userCafes: state.userCafes.concat(action.cafe), posting: false};

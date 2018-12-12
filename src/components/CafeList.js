@@ -100,7 +100,8 @@ class CafeList extends Component {
     event.preventDefault();
     const cafeId = this.state.reqValue;
     if (cafeId !== ''){
-      console.log(cafeId);
+      const data = {cafeId}
+      this.props.joinCafe(data);
     }
   }
 

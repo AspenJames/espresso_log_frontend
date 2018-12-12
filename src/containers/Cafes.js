@@ -23,7 +23,8 @@ class Cafes extends Component {
 
           <div className='col s6'>
             <CafeList cafes={this.props.cafes.cafes}
-              userCafes={this.props.cafes.userCafes} />
+              userCafes={this.props.cafes.userCafes}
+              joinCafe={this.props.joinCafe} />
           </div>
         </div>
       </div>
