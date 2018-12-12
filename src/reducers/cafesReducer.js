@@ -1,10 +1,13 @@
 export default function cafesReducer(state = defaultState, action) {
   switch (action.type) {
     case "ADD_CAFE":
-      return {...state, cafes: state.cafes.concat(action.cafe), posting: false};
-
+      return {...state, cafes: state.cafes.concat(action.cafe), posting: false}
+    
     case "ADD_CAFE_ERROR":
-      return {...state, errors: action.error, posting: false}
+    return {...state, errors: action.error, posting: false}
+    
+    case "ADD_USER_CAFE":
+      return {...state, userCafes: state.userCafes.concat(action.cafe), posting: false};
 
     case "POSTING_CAFE":
       return {...state, posting: true};
@@ -24,7 +27,7 @@ export default function cafesReducer(state = defaultState, action) {
 }
 
 const defaultState = {
-  cafes: [], posting: false, errors: null
+  userCafes: [], cafes: [], posting: false, errors: null
 }
 
 /**

@@ -5,59 +5,108 @@ import M from '../../node_modules/materialize-css/dist/js/materialize';
 class CafeList extends Component {
 
   state = {
-    value: ''
+    selValue: '',
+    reqValue: ''
   }
 
   componentDidUpdate(){
-    const selectElement = document.querySelector('select');
-    M.FormSelect.init(selectElement);
+    const selectElements = document.querySelectorAll('select');
+    M.FormSelect.init(selectElements);
   }
 
   render() {
-    return (
-      <div className='row'>
-        <div className='card transparent col s12 z-depth-0'>
-          <h4 className='dark'>Select from existing cafes</h4>
+    return <div className="row">
+        <div className="card transparent col s12 z-depth-0">
+          <h4 className="dark">Select from existing cafes</h4>
         </div>
 
-        <form className='col s12' onSubmit={this.handleSubmit}>
-          <div className='row'>
-            <div className='formElement-split'>
-              <select value={this.state.value} onChange={this.handleChange}>
-                <option value='' disabled>Choose your cafe</option>
-                {this.renderCafeOptions()}
+        <form className="col s12" onSubmit={this.handleSelSubmit}>
+          <div className="row">
+            <div className="formElement-split">
+              <select value={this.state.selValue} onChange={this.handleSelChange}>
+                <option value="" disabled>
+                  Choose your cafe
+                </option>
+                {this.renderUserCafeOptions()}
               </select>
               <label>Your cafes</label>
             </div>
           </div>
 
-          <div className='row'>
-            <button className='btn btn-large waves-effect waves-light' type='submit'>Select Cafe<i className='material-icons right'>send</i></button>
+          <div className="row">
+            <button className="btn btn-large waves-effect waves-light" type="submit">
+              Select Cafe<i className="material-icons right">send</i>
+            </button>
           </div>
         </form>
-      </div>
-    );
+
+        <div className="card transparent col s12 z-depth-0">
+          <h4 className="dark">Or join a new cafe</h4>
+        </div>
+
+        <form className="col s12" onSubmit={this.handleReqSubmit}>
+          <div className="row">
+            <div className="formElement-split">
+              <select value={this.state.reqValue} onChange={this.handleReqChange}>
+                <option value='' disabled>
+                  Request to join
+                </option>
+                {this.renderCafeOptions()}
+              </select>
+              <label>Existing Cafes</label>
+            </div>
+          </div>
+
+          <div className="row">
+            <button className="btn btn-large waves-effect waves-light" type="submit">
+              Send request<i className="material-icons right">send</i>
+            </button>
+          </div>
+        </form>
+      </div>;
   }
 
-  handleChange = (event) => {
+  handleSelChange = (event) => {
     this.setState({
-      value: event.target.value
+      selValue: event.target.value
     });
   }
 
-  handleSubmit = (event) => {
+  handleSelSubmit = (event) => {
     event.preventDefault();
-    const cafeId = this.state.value
+    const cafeId = this.state.selValue;
     if (cafeId !== ''){
       this.props.history.push(`/cafes/${cafeId}`)
     }
   }
 
-  renderCafeOptions = () => {
-    const options = this.props.cafes.map(cafe => (
+  handleReqChange = (event) => {
+    this.setState({
+      reqValue: event.target.value
+    });
+  }
+
+  handleReqSubmit = (event) => {
+    event.preventDefault();
+    const cafeId = this.state.reqValue;
+    if (cafeId !== ''){
+      console.log(cafeId);
+    }
+  }
+
+  renderUserCafeOptions = () => {
+    return this.props.userCafes.map(cafe => (
       <option key={cafe.id} value={cafe.id}>{cafe.name} - {cafe.address}</option>
     ));
-    return options;
+  }
+
+  renderCafeOptions = () => {
+    const cafes = this.props.cafes;
+    const userCafes = this.props.userCafes;
+    const options = cafes.filter(c => !userCafes.find(u => u.id === c.id));
+    return options.map(cafe => (
+      <option key={cafe.id} value={cafe.id}>{cafe.name} - {cafe.address}</option>
+    ));
   }
 }
 

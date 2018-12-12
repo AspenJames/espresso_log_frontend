@@ -23,10 +23,22 @@ export const fetchUserCafes = (userId) => {
       .then(json => {
         if (json.data) {
           json.data.forEach(cafe => {
-            dispatch(addCafe(cafe));
-          })
+            dispatch(addUserCafe(cafe));
+          });
         }
-      })
+      });
+  }
+}
+
+export const fetchCafes = () => {
+  return dispatch => {
+    dispatch(postingCafes());
+    return httpGet(`/api/v1/cafes`)
+      .then(json => {
+        if (json.data) {
+          json.data.forEach(cafe => dispatch(addCafe(cafe)));
+        }
+      });
   }
 }
 
@@ -38,10 +50,14 @@ export const resetCafes = () => {
   return {type: "RESET_CAFES"}
 }
 
-const postingCafes = () => ({type: "POSTING_CAFE"})
+const postingCafes = () => ({type: "POSTING_CAFE"});
 
 const addCafe = (cafe) => {
-  return {type: "ADD_CAFE", cafe};
+  return {type: "ADD_CAFE", cafe}
+}
+
+const addUserCafe = (cafe) => {
+  return {type: "ADD_USER_CAFE", cafe};
 }
 
 const addError = (error) => {

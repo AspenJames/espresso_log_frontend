@@ -1,7 +1,7 @@
 import { push } from 'connected-react-router';
 
 import { httpPost } from "../utilities";
-import { fetchUserCafes } from './cafeActions';
+import { fetchUserCafes, fetchCafes } from './cafeActions';
 
 export const registerUser = (data) => {
   return dispatch => {
@@ -77,7 +77,11 @@ const addUserError = (error) => {
 
 const addUser = (user) => {
   return dispatch => {
-    dispatch({type: "ADD_USER", user})
-    dispatch(fetchUserCafes(user.id))
+    // add the user
+    dispatch({type: "ADD_USER", user});
+    // fetch their cafes
+    dispatch(fetchUserCafes(user.id));
+    // fetch all cafes
+    dispatch(fetchCafes());
   }
 }
