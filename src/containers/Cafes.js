@@ -8,7 +8,7 @@ import * as actions from '../actions/cafeActions';
 class Cafes extends Component {
 
   componentWillUnmount() {
-    this.props.resetCafes();
+    this.props.resetCafeErrors();
   }
 
   render() {

@@ -9,8 +9,18 @@ class CafeList extends Component {
     reqValue: ''
   }
 
+  componentDidMount(){
+    if (this.props.cafes.length > 0) {
+      this.initSelect();
+    }
+  }
+
   componentDidUpdate(){
-    const selectElements = document.querySelectorAll('select');
+    this.initSelect();
+  }
+
+  initSelect = () => {
+    const selectElements = document.querySelectorAll("select");
     M.FormSelect.init(selectElements);
   }
 
