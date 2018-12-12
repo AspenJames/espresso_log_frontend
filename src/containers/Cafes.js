@@ -23,7 +23,7 @@ class Cafes extends Component {
 
           <div className='col s6'>
             <CafeList cafes={this.props.cafes.cafes}
-              userCafes={this.props.userCafes} />
+              userCafes={this.props.cafes.userCafes} />
           </div>
         </div>
       </div>
@@ -38,8 +38,7 @@ class Cafes extends Component {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    cafes: state.cafes,
-    userCafes: state.cafes.userCafes
+    cafes: state.cafes
   }
 }
 
