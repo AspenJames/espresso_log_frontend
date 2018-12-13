@@ -1,27 +1,29 @@
 import React from 'react';
-import { Route, Redirect, withRouter } from 'react-router';
+import { Route, withRouter } from 'react-router';
 
 const CafeRoute = ({ component: Component, ...rest }) => {
 
+  const currCafeId = parseInt(rest.location.pathname.replace("/cafes/", ""));
+  let cafeUser;
+  if (rest.user.cafeUsers){
+    cafeUser = rest.user.cafeUsers.find(c => c.cafe_id === currCafeId)
+  }
+
   const isAdmin = () => {
-    debugger;
-    return false;
+    return cafeUser ? cafeUser.admin : false;
   }
   
   const isApproved = () => {
-    return false;
+    return cafeUser ? cafeUser.approved : false;
   }
 
   return (<Route {...rest} render={props => {
     if (isAdmin()) {
-      return <Component admin='true' {...props} />
+      return <Component admin='true' approved='true' cafes={rest.cafes} {...props} />
     } else if (isApproved()) {
-      return <Component {...props} />
+      return <Component approved='true' cafes={rest.cafes} {...props} />;
     } else {
-      return <Redirect to={{
-        pathname: '/',
-        state: { from: props.location }
-      }} />
+      return <Component approved='false' cafes={rest.cafes} {...props} />
     }
   }} />)
 };
