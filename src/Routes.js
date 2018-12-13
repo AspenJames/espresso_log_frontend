@@ -8,7 +8,7 @@ import Home from './components/Home';
 import Signup from './containers/Signup';
 import Login from './containers/Login';
 import Cafes from './containers/Cafes';
-import Coffee from './containers/Coffee';
+import Cafe from './containers/Cafe';
 
 const Routes = (props) => {
   return (
@@ -20,7 +20,7 @@ const Routes = (props) => {
       
       <AuthenticatedRoute exact path='/cafes' component={Cafes} />
 
-      <CafeRoute exact path='/cafes/:id' component={Coffee}
+      <CafeRoute exact path='/cafes/:id' component={Cafe}
         user={props.user} cafes={props.cafes} />
     </React.Fragment>
   );
