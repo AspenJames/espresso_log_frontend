@@ -57,10 +57,9 @@ export const retrieveUser = () => {
     dispatch({type: "POSTING_USER"})
     return httpPost('/api/v1/session_retrieve')
       .then(json => {
-        if (json.data) {
+        if (json.data.user) {
           dispatch(addUser(json.data.user));
         } else {
-          dispatch(addUserError(json.error));
           localStorage.removeItem('phoenixAuthToken');
         }
       });
