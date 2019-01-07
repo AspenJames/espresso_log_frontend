@@ -9,18 +9,20 @@ const CafeRoute = ({ component: Component, ...rest }) => {
     cafeUser = rest.user.cafeUsers.find(c => c.cafe_id === currCafeId)
   }
 
-  const isAdmin = () => {
-    return cafeUser ? cafeUser.admin : false;
-  }
+  // const isAdmin = () => {
+  //   return cafeUser ? cafeUser.admin : false;
+  // }
+  // Ideally, the admin route should be separated into /cafe/admin
   
   const isApproved = () => {
     return cafeUser ? cafeUser.approved : false;
   }
 
   return (<Route {...rest} render={props => {
-    if (isAdmin()) {
-      return <Component admin='true' approved='true' cafes={rest.cafes} {...props} />
-    } else if (isApproved()) {
+    // if (isAdmin()) {
+    //   return <Component admin='true' approved='true' cafes={rest.cafes} {...props} />
+    // } else if (isApproved()) {
+    if (isApproved()) {
       return <Component approved='true' cafes={rest.cafes} {...props} />;
     } else {
       return <Component approved='false' cafes={rest.cafes} {...props} />
